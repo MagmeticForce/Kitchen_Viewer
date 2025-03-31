@@ -5,7 +5,7 @@ from math import radians
 
 # Define some parameters that will be used in the script.
 WALL_DISTANCE_FROM_CENTER = -2.5
-WALL_HEIGHT = 2.0
+WALL_HEIGHT = 2.5
 
 
 
