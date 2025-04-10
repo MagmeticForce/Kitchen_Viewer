@@ -47,14 +47,62 @@ bpy.ops.mesh.primitive_cube_add (size=2.0, location=(0.0, 0.0, 0.0), scale = (2.
 floor = bpy.data.objects.get("Cube.002")
     
     
+    
+################### Create an fridge: ###################
+
+# Add a new Cube object
+bpy.ops.mesh.primitive_cube_add (size=2.0, location=(WALL_DISTANCE_FROM_CENTER + 1, 0.0, 2.5), scale = (0.5, 1, 2))
+
+# Save the Cube object into a variable named "sample_cube"
+fridge = bpy.data.objects.get("Cube.003")
+
+
+
+################### Create a fridge texture: ###################
+
+# To create a new texture, copy+paste the code below and change these things in your copied code:
+# * Replace "MyNewMat" with something else
+# * Replace every "sample_material" with something different. 
+# * Replace every "sample_material_nodes" with something different. 
+# * Replace every "sample_material_node_links" with something different.
+# * Replace every "sample_material_principled_bsdf_node" with something different. 
+# * Replace every "sample_texture_node" with something different.
+# * Change the file path so it points to your new texture.
+# * Change "sample_cube" to the object you want to assign the texture to.
+
+gray_fridge_material = bpy.data.materials.new(name="MyNewMat")
+gray_fridge_material.use_nodes = True
+gray_fridge_material_nodes = gray_fridge_material.node_tree.nodes
+gray_fridge_material_node_links = gray_fridge_material.node_tree.links
+
+gray_fridge_texture_node = gray_fridge_material_nodes.new(type="ShaderNodeTexImage")
+gray_fridge_texture_node.image = bpy.data.images.load("C:\\Kitchen_Viewer\\textures\\Kitchen_Viewer_Fridge_Gray.png") # <----------------- CHANGE THIS PATH!!! This is the absolute path to the texture.
+
+gray_fridge_principled_bsdf_node = gray_fridge_material_nodes.get("Principled BSDF")
+gray_fridge_material_node_links.new(gray_fridge_texture_node.outputs['Color'], gray_fridge_principled_bsdf_node.inputs['Base Color'])
+
+
+if len(fridge.data.materials) == 0: # If the length of the array that contains all of sample_cube's materials is 0
+                                         # (so empty, in other words)...
+    fridge.data.materials.append(gray_fridge_material) # Add our new material to the array
+else: # If the array that contains all of sample_cube's materials is NOT empty...
+    fridge.data.materials[0] = gray_fridge_material # Insert our new material into the first slot
+    
+
 
 ################### Create an example cube: ###################
+
+
+# To create a new Cube object, copy+paste the code below and do these things:
+# * Change the size, location, and scale
+# * Change "sample_cube" to something else. This is the variable that refers to your new object.
+# * Change "Cube.004" to something else.
 
 # Add a new Cube object
 bpy.ops.mesh.primitive_cube_add (size=2.0, location=(0.0, 0.0, 2.0), scale = (1, 1, 1))
 
 # Save the Cube object into a variable named "sample_cube"
-sample_cube = bpy.data.objects.get("Cube.003")
+sample_cube = bpy.data.objects.get("Cube.004")
 
 
 
@@ -76,7 +124,7 @@ sample_material_nodes = sample_material.node_tree.nodes
 sample_material_node_links = sample_material.node_tree.links
 
 sample_texture_node = sample_material_nodes.new(type="ShaderNodeTexImage")
-sample_texture_node.image = bpy.data.images.load("C:\\Pictures\\Cube_UV_Reference.png") # <----------------- CHANGE THIS PATH!!! This is the absolute path to the texture.
+sample_texture_node.image = bpy.data.images.load("C:\\Kitchen_Viewer\\Cube_UV_Reference.png") # <----------------- CHANGE THIS PATH!!! This is the absolute path to the texture.
 
 sample_material_principled_bsdf_node = sample_material_nodes.get("Principled BSDF")
 sample_material_node_links.new(sample_texture_node.outputs['Color'], sample_material_principled_bsdf_node.inputs['Base Color'])
