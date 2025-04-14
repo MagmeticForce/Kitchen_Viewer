@@ -1,0 +1,583 @@
+[gd_scene load_steps=7 format=3 uid="uid://byc0sgvqatdoc"]
+
+[ext_resource type="Script" path="res://main_design_info.gd" id="1_mlowb"]
+[ext_resource type="Script" path="res://component_pick_button.gd" id="2_0ko70"]
+[ext_resource type="Script" path="res://column_1.gd" id="2_5tc2x"]
+[ext_resource type="Script" path="res://initial_button.gd" id="3_ewfak"]
+[ext_resource type="Script" path="res://properties.gd" id="3_hlg5d"]
+[ext_resource type="Script" path="res://property_button.gd" id="4_5l6bu"]
+
+[node name="MainDesignInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mlowb")
+
+[node name="Column1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_5tc2x")
+
+[node name="InputDimensions" type="Button" parent="Column1"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 35.0
+offset_right = 347.0
+offset_bottom = 110.0
+text = "Input Dimensions"
+script = ExtResource("3_ewfak")
+
+[node name="StyleFilters" type="Button" parent="Column1"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 151.0
+offset_right = 347.0
+offset_bottom = 226.0
+text = "Style Filters"
+script = ExtResource("3_ewfak")
+initial_id = 1
+
+[node name="AdjustComponent" type="Button" parent="Column1"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 269.0
+offset_right = 347.0
+offset_bottom = 344.0
+text = "Adjust Component"
+script = ExtResource("3_ewfak")
+initial_id = 2
+
+[node name="LoadDesign" type="Button" parent="Column1"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 393.0
+offset_right = 347.0
+offset_bottom = 468.0
+text = "Load Design"
+script = ExtResource("3_ewfak")
+initial_id = 3
+
+[node name="ViewDesign" type="Button" parent="Column1"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 526.0
+offset_right = 347.0
+offset_bottom = 601.0
+text = "View Design"
+script = ExtResource("3_ewfak")
+initial_id = 4
+
+[node name="Column2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ViewDesignOptions" type="Control" parent="Column2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveDesign" type="Button" parent="Column2/ViewDesignOptions"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 35.0
+offset_right = 1132.0
+offset_bottom = 110.0
+text = "Save Design"
+
+[node name="DesignNotAvailable" type="RichTextLabel" parent="Column2/ViewDesignOptions"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 283.0
+offset_right = 752.0
+offset_bottom = 323.0
+text = "Design Not Available
+"
+
+[node name="InputDimensionsOptions" type="Control" parent="Column2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineEdit" type="LineEdit" parent="Column2/InputDimensionsOptions"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 290.0
+offset_right = 605.338
+offset_bottom = 321.0
+placeholder_text = "Enter Width..."
+
+[node name="LineEdit2" type="LineEdit" parent="Column2/InputDimensionsOptions"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 223.0
+offset_right = 605.338
+offset_bottom = 254.0
+placeholder_text = "Enter Length..."
+
+[node name="AdjustComponentOptions" type="Control" parent="Column2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Countertop" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 41.0
+offset_right = 727.0
+offset_bottom = 76.0
+text = "Countertop
+"
+script = ExtResource("2_0ko70")
+
+[node name="Cabinet" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 95.0
+offset_right = 727.0
+offset_bottom = 130.0
+text = "Cabinet
+"
+script = ExtResource("2_0ko70")
+item_id = 1
+
+[node name="Stovetop" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 148.0
+offset_right = 727.0
+offset_bottom = 183.0
+text = "Stovetop"
+script = ExtResource("2_0ko70")
+item_id = 2
+
+[node name="Backsplash" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 201.0
+offset_right = 727.0
+offset_bottom = 236.0
+text = "Backsplash"
+script = ExtResource("2_0ko70")
+item_id = 3
+
+[node name="Fridge" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 256.0
+offset_right = 727.0
+offset_bottom = 291.0
+text = "Fridge"
+script = ExtResource("2_0ko70")
+item_id = 4
+
+[node name="Microwave" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 312.0
+offset_right = 727.0
+offset_bottom = 347.0
+text = "Microwave"
+script = ExtResource("2_0ko70")
+item_id = 5
+
+[node name="Oven" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 362.0
+offset_right = 727.0
+offset_bottom = 397.0
+text = "Oven"
+script = ExtResource("2_0ko70")
+item_id = 6
+
+[node name="Dishwasher" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 416.0
+offset_right = 727.0
+offset_bottom = 451.0
+text = "Dishwasher"
+script = ExtResource("2_0ko70")
+item_id = 7
+
+[node name="Flooring" type="Button" parent="Column2/AdjustComponentOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 468.0
+offset_right = 727.0
+offset_bottom = 503.0
+text = "Flooring"
+script = ExtResource("2_0ko70")
+item_id = 8
+
+[node name="Properties" type="Control" parent="Column2/AdjustComponentOptions"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_hlg5d")
+
+[node name="Countertop" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WhiteMarble" type="Button" parent="Column2/AdjustComponentOptions/Properties/Countertop"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White Marble
+"
+script = ExtResource("4_5l6bu")
+
+[node name="Soapstone" type="Button" parent="Column2/AdjustComponentOptions/Properties/Countertop"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Soapstone"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Butcher Block" type="Button" parent="Column2/AdjustComponentOptions/Properties/Countertop"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Butcher Block
+"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Cabinet" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="White" type="Button" parent="Column2/AdjustComponentOptions/Properties/Cabinet"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White"
+script = ExtResource("4_5l6bu")
+
+[node name="Brown" type="Button" parent="Column2/AdjustComponentOptions/Properties/Cabinet"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Brown"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Cabinet"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black
+"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Stovetop" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GasStovetop" type="Button" parent="Column2/AdjustComponentOptions/Properties/Stovetop"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "Gas Stovetop"
+script = ExtResource("4_5l6bu")
+
+[node name="ElectricStovetop" type="Button" parent="Column2/AdjustComponentOptions/Properties/Stovetop"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Electric Stovetop"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Backsplash" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Backsplash"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "Tile"
+script = ExtResource("4_5l6bu")
+
+[node name="WoodPanel" type="Button" parent="Column2/AdjustComponentOptions/Properties/Backsplash"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Wood Panel"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Brick" type="Button" parent="Column2/AdjustComponentOptions/Properties/Backsplash"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Brick"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Fridge" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="White" type="Button" parent="Column2/AdjustComponentOptions/Properties/Fridge"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White
+"
+script = ExtResource("4_5l6bu")
+
+[node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Fridge"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Silver"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Fridge"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Microwave" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="White" type="Button" parent="Column2/AdjustComponentOptions/Properties/Microwave"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White"
+script = ExtResource("4_5l6bu")
+
+[node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Microwave"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Silver"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Microwave"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Oven" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="White" type="Button" parent="Column2/AdjustComponentOptions/Properties/Oven"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White
+"
+script = ExtResource("4_5l6bu")
+
+[node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Oven"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Silver
+"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Oven"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Dishwasher" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="White" type="Button" parent="Column2/AdjustComponentOptions/Properties/Dishwasher"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White
+"
+script = ExtResource("4_5l6bu")
+
+[node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Dishwasher"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Silver
+"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Dishwasher"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="Flooring" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WhiteTile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Flooring"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 112.0
+offset_right = 1089.0
+offset_bottom = 187.0
+text = "White Tile"
+script = ExtResource("4_5l6bu")
+
+[node name="WoodTile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Flooring"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 223.0
+offset_right = 1089.0
+offset_bottom = 298.0
+text = "Wood Tile"
+script = ExtResource("4_5l6bu")
+property_id = 1
+
+[node name="BlackTile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Flooring"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 327.0
+offset_right = 1089.0
+offset_bottom = 402.0
+text = "Black Tile"
+script = ExtResource("4_5l6bu")
+property_id = 2
+
+[node name="StyleFiltersOptions" type="Control" parent="Column2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Modern" type="Button" parent="Column2/StyleFiltersOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 184.0
+offset_right = 727.0
+offset_bottom = 259.0
+text = "Modern"
+
+[node name="Rustic" type="Button" parent="Column2/StyleFiltersOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 288.0
+offset_right = 727.0
+offset_bottom = 363.0
+text = "Rustic"
+
+[node name="Minimalist" type="Button" parent="Column2/StyleFiltersOptions"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 404.0
+offset_right = 727.0
+offset_bottom = 479.0
+text = "Minimalist"
+
+[node name="LoadDesign" type="Control" parent="Column2"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DesignNotAvailable2" type="RichTextLabel" parent="Column2/LoadDesign"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 283.0
+offset_right = 752.0
+offset_bottom = 323.0
+text = "Design Not Available
+"
