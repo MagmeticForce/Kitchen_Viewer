@@ -5,7 +5,9 @@ extends Control
 @onready var adjust_component_options: Control = $"../Column2/AdjustComponentOptions"
 @onready var load_design: Control = $"../Column2/LoadDesign"
 @onready var view_design_options: Control = $"../Column2/ViewDesignOptions"
-
+@onready var view_design_code: LineEdit = $"../Column2/ViewDesignOptions/DesignCode"
+@onready var load_design_code: LineEdit = $"../Column2/LoadDesign/DesignCode"
+@onready var main_design_info: Control = $".."
 
 var active_func : Node = null
 
@@ -24,4 +26,5 @@ func change_shown_function(initial_id : int):
 		active_func = load_design
 	elif (initial_id == 4):
 		active_func = view_design_options
+		view_design_code.text = main_design_info.output_code()
 	active_func.visible = true

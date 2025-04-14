@@ -1,11 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://byc0sgvqatdoc"]
+[gd_scene load_steps=20 format=3 uid="uid://byc0sgvqatdoc"]
 
-[ext_resource type="Script" path="res://main_design_info.gd" id="1_mlowb"]
-[ext_resource type="Script" path="res://component_pick_button.gd" id="2_0ko70"]
-[ext_resource type="Script" path="res://column_1.gd" id="2_5tc2x"]
-[ext_resource type="Script" path="res://initial_button.gd" id="3_ewfak"]
-[ext_resource type="Script" path="res://properties.gd" id="3_hlg5d"]
-[ext_resource type="Script" path="res://property_button.gd" id="4_5l6bu"]
+[ext_resource type="Script" path="res://Scripts/main_design_info.gd" id="1_7m3ge"]
+[ext_resource type="Script" path="res://Scripts/column_1.gd" id="2_nkbgq"]
+[ext_resource type="Script" path="res://Scripts/initial_button.gd" id="3_x1i85"]
+[ext_resource type="Script" path="res://Scripts/object_change.gd" id="4_tckb4"]
+[ext_resource type="Material" uid="uid://b7cw8j1nwxwvv" path="res://Material/Tile.tres" id="5_e4l8w"]
+[ext_resource type="Material" uid="uid://dli61vc35j4b2" path="res://Material/Wood.tres" id="6_1jbmv"]
+[ext_resource type="Material" uid="uid://bpe0fkjhb5d30" path="res://Material/Brick.tres" id="7_38ou0"]
+[ext_resource type="Material" uid="uid://cavu13o1vwdli" path="res://Material/Black.tres" id="8_0wkxg"]
+[ext_resource type="Material" uid="uid://bihsfrql0jm60" path="res://Material/BlackTile.tres" id="9_xm46b"]
+[ext_resource type="Material" uid="uid://ctl6st6hji72" path="res://Material/White.tres" id="10_cv7js"]
+[ext_resource type="Material" uid="uid://i1dn6f0e8a1y" path="res://Material/Silver.tres" id="11_ewlmp"]
+[ext_resource type="Material" uid="uid://dwyrlb81cp38g" path="res://Material/Brown.tres" id="12_cv0st"]
+[ext_resource type="Script" path="res://Scripts/component_pick_button.gd" id="13_vi1rp"]
+[ext_resource type="Script" path="res://Scripts/properties.gd" id="14_flouc"]
+[ext_resource type="Script" path="res://Scripts/property_button.gd" id="15_taesc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1drrg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wkc3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62u0n"]
+albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
+metallic = 0.45
+metallic_specular = 1.0
+
+[sub_resource type="Environment" id="Environment_6nu4g"]
+background_mode = 1
+background_color = Color(0.879107, 0.901272, 0.793361, 1)
 
 [node name="MainDesignInfo" type="Control"]
 layout_mode = 3
@@ -14,13 +36,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mlowb")
+script = ExtResource("1_7m3ge")
 
 [node name="Column1" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_5tc2x")
+script = ExtResource("2_nkbgq")
 
 [node name="InputDimensions" type="Button" parent="Column1"]
 layout_mode = 0
@@ -29,7 +51,7 @@ offset_top = 35.0
 offset_right = 347.0
 offset_bottom = 110.0
 text = "Input Dimensions"
-script = ExtResource("3_ewfak")
+script = ExtResource("3_x1i85")
 
 [node name="StyleFilters" type="Button" parent="Column1"]
 layout_mode = 0
@@ -38,7 +60,7 @@ offset_top = 151.0
 offset_right = 347.0
 offset_bottom = 226.0
 text = "Style Filters"
-script = ExtResource("3_ewfak")
+script = ExtResource("3_x1i85")
 initial_id = 1
 
 [node name="AdjustComponent" type="Button" parent="Column1"]
@@ -48,7 +70,7 @@ offset_top = 269.0
 offset_right = 347.0
 offset_bottom = 344.0
 text = "Adjust Component"
-script = ExtResource("3_ewfak")
+script = ExtResource("3_x1i85")
 initial_id = 2
 
 [node name="LoadDesign" type="Button" parent="Column1"]
@@ -58,7 +80,7 @@ offset_top = 393.0
 offset_right = 347.0
 offset_bottom = 468.0
 text = "Load Design"
-script = ExtResource("3_ewfak")
+script = ExtResource("3_x1i85")
 initial_id = 3
 
 [node name="ViewDesign" type="Button" parent="Column1"]
@@ -68,7 +90,7 @@ offset_top = 526.0
 offset_right = 347.0
 offset_bottom = 601.0
 text = "View Design"
-script = ExtResource("3_ewfak")
+script = ExtResource("3_x1i85")
 initial_id = 4
 
 [node name="Column2" type="Control" parent="."]
@@ -82,22 +104,146 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveDesign" type="Button" parent="Column2/ViewDesignOptions"]
+[node name="DesignCode" type="LineEdit" parent="Column2/ViewDesignOptions"]
 layout_mode = 0
-offset_left = 832.0
-offset_top = 35.0
-offset_right = 1132.0
-offset_bottom = 110.0
-text = "Save Design"
+offset_left = 523.0
+offset_top = 264.0
+offset_right = 649.015
+offset_bottom = 295.0
+text = "N/A"
+editable = false
 
-[node name="DesignNotAvailable" type="RichTextLabel" parent="Column2/ViewDesignOptions"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Column2/ViewDesignOptions"]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 283.0
-offset_right = 752.0
-offset_bottom = 323.0
-text = "Design Not Available
-"
+offset_left = 833.0
+offset_top = 186.0
+offset_right = 1089.0
+offset_bottom = 442.0
+
+[node name="SubViewport" type="SubViewport" parent="Column2/ViewDesignOptions/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 0
+
+[node name="Node3D" type="Node3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport"]
+
+[node name="Wall1" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-0.58866, 0, -0.496346, 0, 2, 0, 2.97023, 0, -0.0983692, -2.20938, -0.529562, -4.0695)
+mesh = SubResource("BoxMesh_1drrg")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("5_e4l8w")
+material2 = ExtResource("6_1jbmv")
+material3 = ExtResource("7_38ou0")
+
+[node name="Wall2" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(4.73785, 0, -0.0991468, 0, 2, 0, 0.938979, 0, 0.50027, 0.399771, -0.529562, -4.90757)
+mesh = SubResource("BoxMesh_1drrg")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("5_e4l8w")
+material2 = ExtResource("6_1jbmv")
+material3 = ExtResource("7_38ou0")
+
+[node name="Floor" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-0.585819, 4.972, 2.58225e-08, 1.31719e-07, -2.2156e-07, 0.502627, 2.95589, 0.985385, -1.72802e-08, 0.015277, -1.60545, -3.65678)
+material_override = ExtResource("8_0wkxg")
+mesh = SubResource("BoxMesh_1drrg")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("5_e4l8w")
+material2 = ExtResource("6_1jbmv")
+material3 = ExtResource("9_xm46b")
+
+[node name="Fridge" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.435483, 0, 0, 0, 1.2088, 0, 0, 0, 0.468336, -1.58305, -0.77543, -4.58202)
+material_override = ExtResource("8_0wkxg")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("11_ewlmp")
+material3 = ExtResource("8_0wkxg")
+
+[node name="Cabinet" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.435483, 0, 0, 0, 1.2088, 0, 0, 0, 0.468336, -1.90107, -0.77543, -3.57738)
+material_override = ExtResource("12_cv0st")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("12_cv0st")
+material3 = ExtResource("8_0wkxg")
+
+[node name="CounterBase" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(1.23435, 0, 0, 0, 0.460604, 0, 0, 0, 0.356254, 0.706166, -1.3181, -2.6019)
+material_override = ExtResource("11_ewlmp")
+mesh = SubResource("BoxMesh_wkc3m")
+
+[node name="Microwave" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.349396, 0, 0.0707927, 0, 0.269873, 0, -0.0810821, 0, 0.305058, 0.342682, -0.955826, -2.6019)
+material_override = ExtResource("11_ewlmp")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("11_ewlmp")
+material3 = ExtResource("8_0wkxg")
+
+[node name="MicrowaveWindow" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Microwave"]
+transform = Transform3D(0.828722, 0, 0, 0, 0.447346, 0, -1.49012e-08, 0, 1.08481, 0.00557041, 0.0678434, -0.0274925)
+material_override = SubResource("StandardMaterial3D_62u0n")
+mesh = SubResource("BoxMesh_wkc3m")
+skeleton = NodePath("../..")
+
+[node name="Oven" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.73514, 0, -0.066149, 0, 0.74783, 0, 0.165307, 0, 0.294172, 1.50483, -1.1267, -4.36593)
+material_override = ExtResource("11_ewlmp")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("11_ewlmp")
+material3 = ExtResource("8_0wkxg")
+
+[node name="OvenWindow" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Oven"]
+transform = Transform3D(0.828722, 0, 0, 0, 0.447346, 0, -1.49012e-08, 0, 1.08481, 0.00557041, 0.0678434, -0.0274925)
+material_override = SubResource("StandardMaterial3D_62u0n")
+mesh = SubResource("BoxMesh_wkc3m")
+skeleton = NodePath("../..")
+
+[node name="OvenHandle" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Oven"]
+transform = Transform3D(0.828722, 0, 2.98023e-08, 0, 0.0628799, 0, 0, 0, 1.08481, 0.00557017, 0.392336, -0.0274925)
+material_override = SubResource("StandardMaterial3D_62u0n")
+mesh = SubResource("BoxMesh_wkc3m")
+skeleton = NodePath("../..")
+
+[node name="Dishwasher" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.73514, 0, -0.066149, 0, 0.74783, 0, 0.165307, 0, 0.294172, 0.459011, -1.1267, -4.56142)
+material_override = ExtResource("11_ewlmp")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("11_ewlmp")
+material3 = ExtResource("8_0wkxg")
+
+[node name="DishwasherHandle" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Dishwasher"]
+transform = Transform3D(0.828722, 0, 2.98023e-08, 0, 0.0628799, 0, 0, 0, 1.08481, 0.00557017, 0.392336, -0.0274925)
+material_override = SubResource("StandardMaterial3D_62u0n")
+mesh = SubResource("BoxMesh_wkc3m")
+skeleton = NodePath("../..")
+
+[node name="Countertop" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(1.40695, 0, 0, 0, 0.0804021, 0, 0, 0, 0.431377, 0.706166, -1.10268, -2.6019)
+material_override = ExtResource("6_1jbmv")
+mesh = SubResource("BoxMesh_wkc3m")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("10_cv7js")
+material2 = ExtResource("11_ewlmp")
+material3 = ExtResource("6_1jbmv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.80289, 0.596127, 0, -0.596127, 0.80289, 0, 0.850186, 0)
+light_color = Color(0.57, 0.3325, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+environment = SubResource("Environment_6nu4g")
+
+[node name="Camera3D" type="Camera3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.978746, 1.11022e-16, 0.205077, -0.0296112, 0.989521, 0.141322, -0.202928, -0.144391, 0.968489, 0.659749, 0.171561, -0.957267)
 
 [node name="InputDimensionsOptions" type="Control" parent="Column2"]
 visible = false
@@ -121,6 +267,14 @@ offset_right = 605.338
 offset_bottom = 254.0
 placeholder_text = "Enter Length..."
 
+[node name="SubmitDimensions" type="Button" parent="Column2/InputDimensionsOptions"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 345.0
+offset_right = 597.0
+offset_bottom = 380.0
+text = "Submit"
+
 [node name="AdjustComponentOptions" type="Control" parent="Column2"]
 visible = false
 anchors_preset = 0
@@ -135,7 +289,7 @@ offset_right = 727.0
 offset_bottom = 76.0
 text = "Countertop
 "
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 
 [node name="Cabinet" type="Button" parent="Column2/AdjustComponentOptions"]
 layout_mode = 0
@@ -145,7 +299,7 @@ offset_right = 727.0
 offset_bottom = 130.0
 text = "Cabinet
 "
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 1
 
 [node name="Stovetop" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -155,7 +309,7 @@ offset_top = 148.0
 offset_right = 727.0
 offset_bottom = 183.0
 text = "Stovetop"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 2
 
 [node name="Backsplash" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -165,7 +319,7 @@ offset_top = 201.0
 offset_right = 727.0
 offset_bottom = 236.0
 text = "Backsplash"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 3
 
 [node name="Fridge" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -175,7 +329,7 @@ offset_top = 256.0
 offset_right = 727.0
 offset_bottom = 291.0
 text = "Fridge"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 4
 
 [node name="Microwave" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -185,7 +339,7 @@ offset_top = 312.0
 offset_right = 727.0
 offset_bottom = 347.0
 text = "Microwave"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 5
 
 [node name="Oven" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -195,7 +349,7 @@ offset_top = 362.0
 offset_right = 727.0
 offset_bottom = 397.0
 text = "Oven"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 6
 
 [node name="Dishwasher" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -205,7 +359,7 @@ offset_top = 416.0
 offset_right = 727.0
 offset_bottom = 451.0
 text = "Dishwasher"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 7
 
 [node name="Flooring" type="Button" parent="Column2/AdjustComponentOptions"]
@@ -215,14 +369,14 @@ offset_top = 468.0
 offset_right = 727.0
 offset_bottom = 503.0
 text = "Flooring"
-script = ExtResource("2_0ko70")
+script = ExtResource("13_vi1rp")
 item_id = 8
 
 [node name="Properties" type="Control" parent="Column2/AdjustComponentOptions"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_hlg5d")
+script = ExtResource("14_flouc")
 
 [node name="Countertop" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
 visible = false
@@ -238,7 +392,7 @@ offset_right = 1089.0
 offset_bottom = 187.0
 text = "White Marble
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Soapstone" type="Button" parent="Column2/AdjustComponentOptions/Properties/Countertop"]
 layout_mode = 0
@@ -247,7 +401,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Soapstone"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Butcher Block" type="Button" parent="Column2/AdjustComponentOptions/Properties/Countertop"]
@@ -258,7 +412,7 @@ offset_right = 1089.0
 offset_bottom = 402.0
 text = "Butcher Block
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Cabinet" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -274,7 +428,7 @@ offset_top = 112.0
 offset_right = 1089.0
 offset_bottom = 187.0
 text = "White"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Brown" type="Button" parent="Column2/AdjustComponentOptions/Properties/Cabinet"]
 layout_mode = 0
@@ -283,7 +437,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Brown"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Cabinet"]
@@ -294,7 +448,7 @@ offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Stovetop" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -310,7 +464,7 @@ offset_top = 112.0
 offset_right = 1089.0
 offset_bottom = 187.0
 text = "Gas Stovetop"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="ElectricStovetop" type="Button" parent="Column2/AdjustComponentOptions/Properties/Stovetop"]
 layout_mode = 0
@@ -319,7 +473,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Electric Stovetop"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Backsplash" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -335,7 +489,7 @@ offset_top = 112.0
 offset_right = 1089.0
 offset_bottom = 187.0
 text = "Tile"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="WoodPanel" type="Button" parent="Column2/AdjustComponentOptions/Properties/Backsplash"]
 layout_mode = 0
@@ -344,7 +498,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Wood Panel"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Brick" type="Button" parent="Column2/AdjustComponentOptions/Properties/Backsplash"]
@@ -354,7 +508,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Brick"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Fridge" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -371,7 +525,7 @@ offset_right = 1089.0
 offset_bottom = 187.0
 text = "White
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Fridge"]
 layout_mode = 0
@@ -380,7 +534,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Silver"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Fridge"]
@@ -390,7 +544,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Microwave" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -406,7 +560,7 @@ offset_top = 112.0
 offset_right = 1089.0
 offset_bottom = 187.0
 text = "White"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Microwave"]
 layout_mode = 0
@@ -415,7 +569,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Silver"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Microwave"]
@@ -425,7 +579,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Oven" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -442,7 +596,7 @@ offset_right = 1089.0
 offset_bottom = 187.0
 text = "White
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Oven"]
 layout_mode = 0
@@ -452,7 +606,7 @@ offset_right = 1089.0
 offset_bottom = 298.0
 text = "Silver
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Oven"]
@@ -462,7 +616,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Dishwasher" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -479,7 +633,7 @@ offset_right = 1089.0
 offset_bottom = 187.0
 text = "White
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="Silver" type="Button" parent="Column2/AdjustComponentOptions/Properties/Dishwasher"]
 layout_mode = 0
@@ -489,7 +643,7 @@ offset_right = 1089.0
 offset_bottom = 298.0
 text = "Silver
 "
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="Black" type="Button" parent="Column2/AdjustComponentOptions/Properties/Dishwasher"]
@@ -499,7 +653,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="Flooring" type="Control" parent="Column2/AdjustComponentOptions/Properties"]
@@ -515,7 +669,7 @@ offset_top = 112.0
 offset_right = 1089.0
 offset_bottom = 187.0
 text = "White Tile"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 
 [node name="WoodTile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Flooring"]
 layout_mode = 0
@@ -524,7 +678,7 @@ offset_top = 223.0
 offset_right = 1089.0
 offset_bottom = 298.0
 text = "Wood Tile"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 1
 
 [node name="BlackTile" type="Button" parent="Column2/AdjustComponentOptions/Properties/Flooring"]
@@ -534,7 +688,7 @@ offset_top = 327.0
 offset_right = 1089.0
 offset_bottom = 402.0
 text = "Black Tile"
-script = ExtResource("4_5l6bu")
+script = ExtResource("15_taesc")
 property_id = 2
 
 [node name="StyleFiltersOptions" type="Control" parent="Column2"]
@@ -573,11 +727,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="DesignNotAvailable2" type="RichTextLabel" parent="Column2/LoadDesign"]
+[node name="SubmitCode" type="Button" parent="Column2/LoadDesign"]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 283.0
-offset_right = 752.0
-offset_bottom = 323.0
-text = "Design Not Available
-"
+offset_left = 536.0
+offset_top = 310.0
+offset_right = 636.0
+offset_bottom = 345.0
+text = "Submit"
+
+[node name="DesignCode" type="LineEdit" parent="Column2/LoadDesign"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 264.0
+offset_right = 649.015
+offset_bottom = 295.0
+text = "N/A"
+
+[connection signal="button_down" from="Column2/StyleFiltersOptions/Modern" to="." method="modern_style"]
+[connection signal="button_down" from="Column2/StyleFiltersOptions/Rustic" to="." method="rustic_style"]
+[connection signal="button_down" from="Column2/StyleFiltersOptions/Minimalist" to="." method="minimalist_style"]
+[connection signal="button_down" from="Column2/LoadDesign/SubmitCode" to="." method="submitted_code"]
