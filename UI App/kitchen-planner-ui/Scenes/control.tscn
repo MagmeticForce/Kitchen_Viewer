@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://byc0sgvqatdoc"]
 
-[ext_resource type="Script" path="res://Scripts/main_design_info.gd" id="1_7m3ge"]
-[ext_resource type="Script" path="res://Scripts/column_1.gd" id="2_nkbgq"]
-[ext_resource type="Script" path="res://Scripts/initial_button.gd" id="3_x1i85"]
-[ext_resource type="Script" path="res://Scripts/object_change.gd" id="4_tckb4"]
+[ext_resource type="Script" uid="uid://dnx508nm4oyvg" path="res://Scripts/main_design_info.gd" id="1_7m3ge"]
+[ext_resource type="Script" uid="uid://ddusiyjiwjvlm" path="res://Scripts/column_1.gd" id="2_nkbgq"]
+[ext_resource type="Script" uid="uid://bgny3txkxqsrw" path="res://Scripts/initial_button.gd" id="3_x1i85"]
+[ext_resource type="Script" uid="uid://c6kar4nykv1xu" path="res://Scripts/object_change.gd" id="4_tckb4"]
 [ext_resource type="Material" uid="uid://b7cw8j1nwxwvv" path="res://Material/Tile.tres" id="5_e4l8w"]
 [ext_resource type="Material" uid="uid://dli61vc35j4b2" path="res://Material/Wood.tres" id="6_1jbmv"]
 [ext_resource type="Material" uid="uid://bpe0fkjhb5d30" path="res://Material/Brick.tres" id="7_38ou0"]
@@ -12,9 +12,9 @@
 [ext_resource type="Material" uid="uid://ctl6st6hji72" path="res://Material/White.tres" id="10_cv7js"]
 [ext_resource type="Material" uid="uid://i1dn6f0e8a1y" path="res://Material/Silver.tres" id="11_ewlmp"]
 [ext_resource type="Material" uid="uid://dwyrlb81cp38g" path="res://Material/Brown.tres" id="12_cv0st"]
-[ext_resource type="Script" path="res://Scripts/component_pick_button.gd" id="13_vi1rp"]
-[ext_resource type="Script" path="res://Scripts/properties.gd" id="14_flouc"]
-[ext_resource type="Script" path="res://Scripts/property_button.gd" id="15_taesc"]
+[ext_resource type="Script" uid="uid://dn434vwwu7lu6" path="res://Scripts/component_pick_button.gd" id="13_vi1rp"]
+[ext_resource type="Script" uid="uid://dm2lr5sxmsdgg" path="res://Scripts/properties.gd" id="14_flouc"]
+[ext_resource type="Script" uid="uid://dhors6v0w0chp" path="res://Scripts/property_button.gd" id="15_taesc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1drrg"]
 

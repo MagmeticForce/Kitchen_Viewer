@@ -81,6 +81,7 @@ func intake_code(input_string : String):
 			if (int(term) < 0 || int(term) > 2):
 				temp_string_array[i] = "0"
 			i += 1
+			
 		countertop = int(temp_string_array[0])
 		cabinet = int(temp_string_array[1])
 		stovetop = int(temp_string_array[2])
