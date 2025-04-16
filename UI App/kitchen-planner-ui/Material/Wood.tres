@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dli61vc35j4b2"]
+
+[ext_resource type="Texture2D" uid="uid://cb5ehnshh03h0" path="res://Textures/WoodPanel.tres" id="1_fyfqm"]
+
+[resource]
+albedo_texture = ExtResource("1_fyfqm")
+uv1_scale = Vector3(2.555, 2.555, 2.555)
+uv1_triplanar = true
+uv1_world_triplanar = true
