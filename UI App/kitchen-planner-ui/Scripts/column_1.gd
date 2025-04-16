@@ -1,5 +1,13 @@
 extends Control
 
+
+
+# This script is responsible for toggling which menu is displayed
+# based on which button the user presses. So for example, when the user presses
+# the "Adjust Component" button, it makes the appropiate buttons display.
+
+# These are all variables that refer to the various menus and options that are
+# in the program, so that we can use them in this script.
 @onready var input_dimensions_options: Control = $"../Column2/InputDimensionsOptions"
 @onready var style_filters_options: Control = $"../Column2/StyleFiltersOptions"
 @onready var adjust_component_options: Control = $"../Column2/AdjustComponentOptions"
@@ -9,8 +17,12 @@ extends Control
 @onready var load_design_code: LineEdit = $"../Column2/LoadDesign/DesignCode"
 @onready var main_design_info: Control = $".."
 
+# This variable stores an object. Specifically, it is meant to store the menu that is active.
 var active_func : Node = null
 
+# This basically says "if this button is pressed, display this menu."
+# Each button is assigned a number, and initial_id basically tells you which
+# button was pressed. For more details, refer to the "initial_button.gd" script.
 func change_shown_function(initial_id : int):
 	if (active_func != null):
 		active_func.visible = false
