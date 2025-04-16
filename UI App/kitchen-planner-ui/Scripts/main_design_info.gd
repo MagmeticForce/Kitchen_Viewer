@@ -1,6 +1,11 @@
 extends Control
 #--EXPORTS
 #variables tracking currently active materials
+
+
+# This code is responsible for applying textures to the 3D objects,
+# as well as handling the codes that you can use to save/load the designs.
+
 @export var countertop: int = 0
 @export var cabinet: int = 0
 @export var stovetop: int = 0
@@ -10,6 +15,7 @@ extends Control
 @export var oven: int = 0
 @export var dishwasher: int = 0
 @export var flooring: int = 0
+# @ export variables are explained in the component_pick_button.gd script.
 
 #--REGULAR VARIABLES
 #temporary variable tracking currently changing item
