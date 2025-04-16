@@ -1,17 +1,35 @@
 extends MeshInstance3D
 
+
+
+# This script is involved with changing the textues on the 3D models 
+# (main_design_info.gd is also involved). It looks like it mainly creates
+# the material slots and sets the default slot, but I am not entirely sure. 
+# If you go to to Scene window on the left and navigate to 
+# MainDesignInfo > Column2 > ViewDesignOptions > SubViewportContainer > 
+# Subviewport > Node3D and select one of those objects, and then look to
+# the right at the Inspector panel, you'll see that this "object_change.gd"
+# script is attached to the object.
+
+# Define variables that store the three textures that will be applied to
+# this object based on which style the user selects:
 @export var material1 : StandardMaterial3D
 @export var material2 : StandardMaterial3D
 @export var material3 : StandardMaterial3D
+# @ export variables are explained in the component_pick_button.gd script.
 
 # Called when the node enters the scene tree for the first time.
+# In other words, this runs the first frame that the button exists in.
+# This is basically where you initialize things. 
 func _ready() -> void:
 	change_material(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	pass # "pass" indicates an empty block of code.
+		 # It is used for fucntions that you want to define
+		 # but don't want to write code for yet.
 
 func change_material(material_id):
 	if (material_id == 0):
