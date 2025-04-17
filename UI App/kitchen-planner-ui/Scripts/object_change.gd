@@ -2,9 +2,7 @@ extends MeshInstance3D
 
 
 
-# This script is involved with changing the textues on the 3D models 
-# (main_design_info.gd is also involved). It looks like it mainly creates
-# the material slots and sets the default slot, but I am not entirely sure. 
+# This script creates the 3D objects whose textures can be swapped. 
 # If you go to to Scene window on the left and navigate to 
 # MainDesignInfo > Column2 > ViewDesignOptions > SubViewportContainer > 
 # Subviewport > Node3D and select one of those objects, and then look to

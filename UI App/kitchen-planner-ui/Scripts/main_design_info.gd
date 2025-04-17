@@ -34,7 +34,7 @@ var current_item: int = 0
 @onready var oven_model: MeshInstance3D = $Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Oven
 @onready var dishwasher_model: MeshInstance3D = $Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Dishwasher
 @onready var countertop_model: MeshInstance3D = $Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Countertop
-
+@onready var stovetop_model: MeshInstance3D = $Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Stovetop
 
 
 #--FUNCTIONS
@@ -76,6 +76,7 @@ func output_code():
 	microwave_model.change_material(microwave)
 	oven_model.change_material(oven)
 	dishwasher_model.change_material(dishwasher)
+	stovetop_model.change_material(stovetop)
 	return (str(countertop)+","+str(cabinet)+","+str(stovetop)+","+str(backsplash)+","+str(fridge)+","+str(microwave)+","+str(oven)+","+str(dishwasher)+","+str(flooring))
 
 func intake_code(input_string : String):
