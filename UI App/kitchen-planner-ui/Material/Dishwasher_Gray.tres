@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8y28aqubwx80"]
+
+[ext_resource type="Texture2D" uid="uid://brv0r2tdyshqq" path="res://Textures/Kitchen_Viewer_Dishwasher_Gray.png" id="1_nmvu6"]
+
+[resource]
+albedo_texture = ExtResource("1_nmvu6")

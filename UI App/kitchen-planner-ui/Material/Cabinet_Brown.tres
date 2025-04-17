@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qqaey682c1cy"]
+
+[ext_resource type="Texture2D" uid="uid://6o21ycj14y0i" path="res://Textures/Kitchen_Viewer_Cabinet_Brown.png" id="1_li7c4"]
+
+[resource]
+albedo_texture = ExtResource("1_li7c4")
+metallic = 0.45
+metallic_specular = 1.0

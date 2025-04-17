@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpe0fkjhb5d30"]
+
+[ext_resource type="Texture2D" uid="uid://dfrxyqrie4snx" path="res://Textures/Kitchen_Viewer_Backplash_Brick.png" id="1_32mf5"]
+
+[resource]
+albedo_texture = ExtResource("1_32mf5")
+uv1_world_triplanar = true

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://3jjbm83fk7ot"]
+
+[ext_resource type="Texture2D" uid="uid://c123vhq38tj8i" path="res://Textures/Kitchen_Viewer_Microwave_White.png" id="1_qhl1f"]
+
+[resource]
+albedo_texture = ExtResource("1_qhl1f")

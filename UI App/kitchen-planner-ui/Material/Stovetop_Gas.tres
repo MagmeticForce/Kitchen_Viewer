@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://uvrrtxlfi18b"]
+
+[ext_resource type="Texture2D" uid="uid://b3y6kkvsbv7ru" path="res://Textures/Kitchen_Viewer_Stovetop_Gas.png" id="1_qd1fd"]
+
+[resource]
+albedo_texture = ExtResource("1_qd1fd")

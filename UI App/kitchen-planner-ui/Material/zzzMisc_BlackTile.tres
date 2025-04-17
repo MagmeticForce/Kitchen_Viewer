@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bihsfrql0jm60"]
+
+[ext_resource type="Texture2D" uid="uid://c1kyyhl7jbhmh" path="res://Textures/Kitchen_Viewer_Flooring_Black_Tile.png" id="1_np4l7"]
+
+[resource]
+albedo_texture = ExtResource("1_np4l7")
+uv1_world_triplanar = true

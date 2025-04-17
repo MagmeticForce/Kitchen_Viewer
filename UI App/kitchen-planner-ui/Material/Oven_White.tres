@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d33g3b2arqdhh"]
+
+[ext_resource type="Texture2D" uid="uid://ddtu6mrscf2mb" path="res://Textures/Kitchen_Viewer_Oven_White.png" id="1_frg6j"]
+
+[resource]
+albedo_texture = ExtResource("1_frg6j")

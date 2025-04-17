@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bo7eidkwhq8rf"]
+
+[ext_resource type="Texture2D" uid="uid://byqdmyc321gkv" path="res://Textures/Kitchen_Viewer_Countertop_Butcher_Block.png" id="1_0h7be"]
+
+[resource]
+albedo_texture = ExtResource("1_0h7be")

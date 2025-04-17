@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6qpf2sa4slib"]
+
+[ext_resource type="Texture2D" uid="uid://b7v175gbuxlcx" path="res://Textures/Kitchen_Viewer_Countertop_Soapstone.png" id="1_7wlem"]
+
+[resource]
+albedo_texture = ExtResource("1_7wlem")
