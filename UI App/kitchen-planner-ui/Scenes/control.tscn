@@ -1,33 +1,75 @@
-[gd_scene load_steps=20 format=3 uid="uid://byc0sgvqatdoc"]
+[gd_scene load_steps=50 format=3 uid="uid://byc0sgvqatdoc"]
 
 [ext_resource type="Script" uid="uid://dnx508nm4oyvg" path="res://Scripts/main_design_info.gd" id="1_7m3ge"]
 [ext_resource type="Script" uid="uid://ddusiyjiwjvlm" path="res://Scripts/column_1.gd" id="2_nkbgq"]
 [ext_resource type="Script" uid="uid://bgny3txkxqsrw" path="res://Scripts/initial_button.gd" id="3_x1i85"]
 [ext_resource type="Script" uid="uid://c6kar4nykv1xu" path="res://Scripts/object_change.gd" id="4_tckb4"]
-[ext_resource type="Material" uid="uid://b7cw8j1nwxwvv" path="res://Material/Tile.tres" id="5_e4l8w"]
-[ext_resource type="Material" uid="uid://dli61vc35j4b2" path="res://Material/Wood.tres" id="6_1jbmv"]
-[ext_resource type="Material" uid="uid://bpe0fkjhb5d30" path="res://Material/Brick.tres" id="7_38ou0"]
-[ext_resource type="Material" uid="uid://cavu13o1vwdli" path="res://Material/Black.tres" id="8_0wkxg"]
-[ext_resource type="Material" uid="uid://bihsfrql0jm60" path="res://Material/BlackTile.tres" id="9_xm46b"]
-[ext_resource type="Material" uid="uid://ctl6st6hji72" path="res://Material/White.tres" id="10_cv7js"]
-[ext_resource type="Material" uid="uid://i1dn6f0e8a1y" path="res://Material/Silver.tres" id="11_ewlmp"]
-[ext_resource type="Material" uid="uid://dwyrlb81cp38g" path="res://Material/Brown.tres" id="12_cv0st"]
+[ext_resource type="Material" uid="uid://bshai7l6vfkmi" path="res://Material/Floor_White_Tile.tres" id="6_8wnrn"]
+[ext_resource type="Material" uid="uid://c7d87fpoqjkgr" path="res://Material/Floor_Wood_Tile.tres" id="7_p8uc1"]
+[ext_resource type="Material" uid="uid://bqk36mmht4njv" path="res://Material/Backsplash_Brick.tres" id="8_83phy"]
+[ext_resource type="Material" uid="uid://c10aab1hwagsp" path="res://Material/Cabinet_Black.tres" id="9_83phy"]
+[ext_resource type="Material" uid="uid://d8ajclt5imaq" path="res://Material/Floor_Black_Tile.tres" id="10_uuio0"]
+[ext_resource type="Texture2D" uid="uid://cnrs02m43v53d" path="res://Textures/Kitchen_Viewer_Fridge_White.png" id="11_bbjms"]
+[ext_resource type="Material" uid="uid://i1dn6f0e8a1y" path="res://Material/zzzMisc_Silver.tres" id="11_ewlmp"]
+[ext_resource type="Material" uid="uid://c7de1grvefnan" path="res://Material/Fridge_White.tres" id="12_p8uc1"]
+[ext_resource type="Material" uid="uid://b3wlhbkk3t5pm" path="res://Material/Fridge_Gray.tres" id="13_83phy"]
+[ext_resource type="ArrayMesh" uid="uid://c12xqaercxwqn" path="res://Mesh/Blender_Cube.obj" id="13_s5sn0"]
 [ext_resource type="Script" uid="uid://dn434vwwu7lu6" path="res://Scripts/component_pick_button.gd" id="13_vi1rp"]
 [ext_resource type="Script" uid="uid://dm2lr5sxmsdgg" path="res://Scripts/properties.gd" id="14_flouc"]
+[ext_resource type="Material" uid="uid://epesc3jpue70" path="res://Material/Fridge_Black.tres" id="14_uuio0"]
 [ext_resource type="Script" uid="uid://dhors6v0w0chp" path="res://Scripts/property_button.gd" id="15_taesc"]
+[ext_resource type="Material" uid="uid://qqaey682c1cy" path="res://Material/Cabinet_Brown.tres" id="15_uuio0"]
+[ext_resource type="Material" uid="uid://c46i7epes5va1" path="res://Material/Cabinet_White.tres" id="16_xxscv"]
+[ext_resource type="Texture2D" uid="uid://c123vhq38tj8i" path="res://Textures/Kitchen_Viewer_Microwave_White.png" id="17_b65us"]
+[ext_resource type="Material" uid="uid://3jjbm83fk7ot" path="res://Material/Microwave_White.tres" id="19_7cj2s"]
+[ext_resource type="Material" uid="uid://dqmxb2v1prxk4" path="res://Material/Microwave_Gray.tres" id="20_uuio0"]
+[ext_resource type="Texture2D" uid="uid://ddtu6mrscf2mb" path="res://Textures/Kitchen_Viewer_Oven_White.png" id="20_v0v5g"]
+[ext_resource type="Material" uid="uid://cig2lr6sqqkgd" path="res://Material/Microwave_Black.tres" id="21_xxscv"]
+[ext_resource type="Material" uid="uid://d33g3b2arqdhh" path="res://Material/Oven_White.tres" id="23_7cj2s"]
+[ext_resource type="Texture2D" uid="uid://wa2tkmdn874y" path="res://Textures/Kitchen_Viewer_Dishwasher_White.png" id="23_q1sl5"]
+[ext_resource type="Material" uid="uid://tyqp3dcdhr2r" path="res://Material/Oven_Gray'.tres" id="24_ds2bm"]
+[ext_resource type="Material" uid="uid://cn05004xmshnd" path="res://Material/Oven_Black.tres" id="25_7cj2s"]
+[ext_resource type="Texture2D" uid="uid://b372vqyplikak" path="res://Textures/Kitchen_Viewer_Countertop_Granite.png" id="26_q1sl5"]
+[ext_resource type="Material" uid="uid://b4jxt6ja8g2mb" path="res://Material/Dishwasher_White.tres" id="27_ds2bm"]
+[ext_resource type="Material" uid="uid://c8y28aqubwx80" path="res://Material/Dishwasher_Gray.tres" id="28_vxa8f"]
+[ext_resource type="Texture2D" uid="uid://b3y6kkvsbv7ru" path="res://Textures/Kitchen_Viewer_Stovetop_Gas.png" id="29_8wnrn"]
+[ext_resource type="Material" uid="uid://ctylux6m84fbv" path="res://Material/Dishwasher_Black.tres" id="29_wu55p"]
+[ext_resource type="Material" uid="uid://c1t7hqkelswoy" path="res://Material/Countertop_White_Marble.tres" id="31_60x3v"]
+[ext_resource type="Material" uid="uid://c6qpf2sa4slib" path="res://Material/Countertop_Soapstone.tres" id="32_1yixh"]
+[ext_resource type="Material" uid="uid://bo7eidkwhq8rf" path="res://Material/Countertop_Butcher_Block.tres" id="33_7cj2s"]
+[ext_resource type="Material" uid="uid://uvrrtxlfi18b" path="res://Material/Stovetop_Gas.tres" id="35_ds2bm"]
+[ext_resource type="Material" uid="uid://7o1sd3isnwsi" path="res://Material/Stovetop_Electric.tres" id="36_vxa8f"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_1drrg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3b1b"]
+albedo_texture = ExtResource("11_bbjms")
 
 [sub_resource type="BoxMesh" id="BoxMesh_wkc3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nikr"]
+albedo_texture = ExtResource("17_b65us")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62u0n"]
 albedo_color = Color(0.303233, 0.303233, 0.303233, 1)
 metallic = 0.45
 metallic_specular = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8uc1"]
+albedo_texture = ExtResource("20_v0v5g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cj2s"]
+albedo_texture = ExtResource("23_q1sl5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60x3v"]
+albedo_texture = ExtResource("26_q1sl5")
+
 [sub_resource type="Environment" id="Environment_6nu4g"]
 background_mode = 1
 background_color = Color(0.879107, 0.901272, 0.793361, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o22x"]
+albedo_texture = ExtResource("29_8wnrn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6x02"]
 
 [node name="MainDesignInfo" type="Control"]
 layout_mode = 3
@@ -129,46 +171,46 @@ render_target_update_mode = 0
 
 [node name="Wall1" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(-0.58866, 0, -0.496346, 0, 2, 0, 2.97023, 0, -0.0983692, -2.20938, -0.529562, -4.0695)
-mesh = SubResource("BoxMesh_1drrg")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("5_e4l8w")
-material2 = ExtResource("6_1jbmv")
-material3 = ExtResource("7_38ou0")
+material1 = ExtResource("6_8wnrn")
+material2 = ExtResource("7_p8uc1")
+material3 = ExtResource("8_83phy")
 
 [node name="Wall2" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(4.73785, 0, -0.0991468, 0, 2, 0, 0.938979, 0, 0.50027, 0.399771, -0.529562, -4.90757)
-mesh = SubResource("BoxMesh_1drrg")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("5_e4l8w")
-material2 = ExtResource("6_1jbmv")
-material3 = ExtResource("7_38ou0")
+material1 = ExtResource("6_8wnrn")
+material2 = ExtResource("7_p8uc1")
+material3 = ExtResource("8_83phy")
 
 [node name="Floor" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(-0.585819, 4.972, 2.58225e-08, 1.31719e-07, -2.2156e-07, 0.502627, 2.95589, 0.985385, -1.72802e-08, 0.015277, -1.60545, -3.65678)
-material_override = ExtResource("8_0wkxg")
-mesh = SubResource("BoxMesh_1drrg")
+transform = Transform3D(-0.585819, 4.972, 1.29112e-08, 1.31719e-07, -2.2156e-07, 0.251314, 2.95589, 0.985385, -8.6401e-09, 0.015277, -1.60545, -3.65678)
+material_override = ExtResource("9_83phy")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("5_e4l8w")
-material2 = ExtResource("6_1jbmv")
-material3 = ExtResource("9_xm46b")
+material1 = ExtResource("6_8wnrn")
+material2 = ExtResource("7_p8uc1")
+material3 = ExtResource("10_uuio0")
 
 [node name="Fridge" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.435483, 0, 0, 0, 1.2088, 0, 0, 0, 0.468336, -1.58305, -0.77543, -4.58202)
-material_override = ExtResource("8_0wkxg")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(0.217741, 0, -0.405591, 0, 1.2088, 0, 0.377139, 0, 0.234168, -1.28586, -0.179561, -4.21333)
+material_override = SubResource("StandardMaterial3D_n3b1b")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("11_ewlmp")
-material3 = ExtResource("8_0wkxg")
+material1 = ExtResource("12_p8uc1")
+material2 = ExtResource("13_83phy")
+material3 = ExtResource("14_uuio0")
 
 [node name="Cabinet" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.435483, 0, 0, 0, 1.2088, 0, 0, 0, 0.468336, -1.90107, -0.77543, -3.57738)
-material_override = ExtResource("12_cv0st")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(0.387012, 0.00320209, -0.0542033, -0.00296182, 0.325002, 0.00318668, 0.0820637, -0.00337109, 0.255737, -1.99272, -0.284529, -3.19067)
+material_override = ExtResource("15_uuio0")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("12_cv0st")
-material3 = ExtResource("8_0wkxg")
+material1 = ExtResource("16_xxscv")
+material2 = ExtResource("15_uuio0")
+material3 = ExtResource("9_83phy")
 
 [node name="CounterBase" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(1.23435, 0, 0, 0, 0.460604, 0, 0, 0, 0.356254, 0.706166, -1.3181, -2.6019)
@@ -176,13 +218,13 @@ material_override = ExtResource("11_ewlmp")
 mesh = SubResource("BoxMesh_wkc3m")
 
 [node name="Microwave" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.349396, 0, 0.0707927, 0, 0.269873, 0, -0.0810821, 0, 0.305058, 0.342682, -0.955826, -2.6019)
-material_override = ExtResource("11_ewlmp")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(-0.00434146, 0, -0.315167, 0, 0.269873, 0, 0.232449, 0, -0.00588657, 0.480027, -0.776886, -2.53954)
+material_override = SubResource("StandardMaterial3D_6nikr")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("11_ewlmp")
-material3 = ExtResource("8_0wkxg")
+material1 = ExtResource("19_7cj2s")
+material2 = ExtResource("20_uuio0")
+material3 = ExtResource("21_xxscv")
 
 [node name="MicrowaveWindow" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Microwave"]
 transform = Transform3D(0.828722, 0, 0, 0, 0.447346, 0, -1.49012e-08, 0, 1.08481, 0.00557041, 0.0678434, -0.0274925)
@@ -191,13 +233,13 @@ mesh = SubResource("BoxMesh_wkc3m")
 skeleton = NodePath("../..")
 
 [node name="Oven" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.73514, 0, -0.066149, 0, 0.74783, 0, 0.165307, 0, 0.294172, 1.50483, -1.1267, -4.36593)
-material_override = ExtResource("11_ewlmp")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(-0.113467, 0, -0.546001, 0, 0.404425, 0, 0.452131, 0, -0.137025, 1.23035, -0.936229, -4.10874)
+material_override = SubResource("StandardMaterial3D_p8uc1")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("11_ewlmp")
-material3 = ExtResource("8_0wkxg")
+material1 = ExtResource("23_7cj2s")
+material2 = ExtResource("24_ds2bm")
+material3 = ExtResource("25_7cj2s")
 
 [node name="OvenWindow" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Oven"]
 transform = Transform3D(0.828722, 0, 0, 0, 0.447346, 0, -1.49012e-08, 0, 1.08481, 0.00557041, 0.0678434, -0.0274925)
@@ -212,13 +254,13 @@ mesh = SubResource("BoxMesh_wkc3m")
 skeleton = NodePath("../..")
 
 [node name="Dishwasher" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.73514, 0, -0.066149, 0, 0.74783, 0, 0.165307, 0, 0.294172, 0.459011, -1.1267, -4.56142)
-material_override = ExtResource("11_ewlmp")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(-0.0859255, 0, -0.327554, 0, 0.388256, 0, 0.436594, 0, -0.0644656, 0.137518, -0.965198, -4.2512)
+material_override = SubResource("StandardMaterial3D_7cj2s")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("11_ewlmp")
-material3 = ExtResource("8_0wkxg")
+material1 = ExtResource("27_ds2bm")
+material2 = ExtResource("28_vxa8f")
+material3 = ExtResource("29_wu55p")
 
 [node name="DishwasherHandle" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D/Dishwasher"]
 transform = Transform3D(0.828722, 0, 2.98023e-08, 0, 0.0628799, 0, 0, 0, 1.08481, 0.00557017, 0.392336, -0.0274925)
@@ -227,13 +269,13 @@ mesh = SubResource("BoxMesh_wkc3m")
 skeleton = NodePath("../..")
 
 [node name="Countertop" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(1.40695, 0, 0, 0, 0.0804021, 0, 0, 0, 0.431377, 0.706166, -1.10268, -2.6019)
-material_override = ExtResource("6_1jbmv")
-mesh = SubResource("BoxMesh_wkc3m")
+transform = Transform3D(0.816379, 0, 0, 0, 0.0666001, 0, 0, 0, 0.27692, 0.706166, -1.10268, -2.6019)
+material_override = SubResource("StandardMaterial3D_60x3v")
+mesh = ExtResource("13_s5sn0")
 script = ExtResource("4_tckb4")
-material1 = ExtResource("10_cv7js")
-material2 = ExtResource("11_ewlmp")
-material3 = ExtResource("6_1jbmv")
+material1 = ExtResource("31_60x3v")
+material2 = ExtResource("32_1yixh")
+material3 = ExtResource("33_7cj2s")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.80289, 0.596127, 0, -0.596127, 0.80289, 0, 0.850186, 0)
@@ -242,8 +284,26 @@ light_color = Color(0.57, 0.3325, 0, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
 environment = SubResource("Environment_6nu4g")
 
+[node name="Stovetop" type="MeshInstance3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.549588, -4.33228e-06, -0.0654242, 0.000331883, 0.0127132, 0.00033583, 0.120492, -1.52574e-05, 0.298412, 1.20278, -0.516088, -3.93954)
+mesh = ExtResource("13_s5sn0")
+surface_material_override/0 = SubResource("StandardMaterial3D_3o22x")
+script = ExtResource("4_tckb4")
+material1 = ExtResource("35_ds2bm")
+material2 = ExtResource("36_vxa8f")
+material3 = SubResource("StandardMaterial3D_m6x02")
+
 [node name="Camera3D" type="Camera3D" parent="Column2/ViewDesignOptions/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.978746, 1.11022e-16, 0.205077, -0.0296112, 0.989521, 0.141322, -0.202928, -0.144391, 0.968489, 0.659749, 0.171561, -0.957267)
+transform = Transform3D(0.978746, -1.20507e-07, 0.205077, -0.104608, 0.860119, 0.499251, -0.176391, -0.510093, 0.841838, 0.659749, 0.751351, -0.957267)
+fov = 70.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Column2/ViewDesignOptions"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 150.0
+offset_right = 823.0
+offset_bottom = 250.0
+text = "These numbers are for saving and loading a design. Please refer to the instructions in the \"Load Design\" menu."
 
 [node name="InputDimensionsOptions" type="Control" parent="Column2"]
 visible = false
@@ -742,6 +802,30 @@ offset_top = 264.0
 offset_right = 649.015
 offset_bottom = 295.0
 text = "N/A"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Column2/LoadDesign"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 100.0
+offset_right = 1100.0
+offset_bottom = 712.0
+text = "To SAVE a design:
+1. In the \"View Design\" menu:
+	a. Click on all of the numbers 
+	b. Use \"Ctrl + A\" (Windows) or \"Command + A\" 
+	(Mac) 
+	c. Use \"Ctrl + C\" (Windows) or \"Command + C\" 
+	(Mac) to copy the numbers.
+
+To LOAD a design:
+1. From this \"Load Design\" menu:
+	a. Click the \"N/A\" text
+	b. Use \"Ctrl + A\" (Windows) or \"Command + A\"
+	 (Mac) 
+	c. Use \"Ctrl + V\" (Windows) or \"Command + V\" 
+	(Mac) to paste the numbers that you had copied.
+	d. Press \"Sumbit\"
+2. Return to the \"View Design\" menu to see your saved design!"
 
 [connection signal="button_down" from="Column2/StyleFiltersOptions/Modern" to="." method="modern_style"]
 [connection signal="button_down" from="Column2/StyleFiltersOptions/Rustic" to="." method="rustic_style"]
